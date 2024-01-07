@@ -1,12 +1,11 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 import { LoginForm } from '@/components/auth/login-form';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
-interface iLoginButtonProps {
-  children: React.ReactNode;
+interface iLoginButtonProps extends WithChildren {
   mode?: 'modal' | 'redirect';
   asChild?: boolean;
 }
@@ -16,12 +15,6 @@ export function LoginButton({
   mode = 'redirect',
   asChild,
 }: iLoginButtonProps) {
-  const router = useRouter();
-
-  const onClick = () => {
-    router.push('/auth/login');
-  };
-
   if (mode === 'modal') {
     return (
       <Dialog>
@@ -34,8 +27,8 @@ export function LoginButton({
   }
 
   return (
-    <span onClick={onClick} className="cursor-pointer">
+    <Link href="/auth/login" className="cursor-pointer">
       {children}
-    </span>
+    </Link>
   );
 }
