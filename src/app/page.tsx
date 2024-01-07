@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { LoginButton } from '@/components/auth/login-button';
 
 export default function Page() {
   return (
@@ -9,11 +10,11 @@ export default function Page() {
         </h1>
         <p className="text-white text-lg">Um serviço de autenticação simples</p>
         <div>
-          {/* <LoginButton asChild> */}
-          <Button variant="secondary" size="lg">
-            Fazer login
-          </Button>
-          {/* </LoginButton> */}
+          <LoginButton asChild>
+            <Button variant="secondary" size="lg">
+              Fazer login
+            </Button>
+          </LoginButton>
         </div>
       </div>
     </main>
