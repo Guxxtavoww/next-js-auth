@@ -4,7 +4,7 @@ export const settingsSchema = z
   .object({
     user_name: z.optional(z.string()),
     is_two_factor_enabled: z.optional(z.boolean()).default(false),
-    // user_role: z.enum([UserRole.ADMIN, UserRole.USER]),
+    user_role: z.union([z.literal('user'), z.literal('admin')]),
     user_email: z.optional(z.string().email()),
     user_password: z.optional(z.string().min(6)),
     newPassword: z.optional(z.string().min(6)),
