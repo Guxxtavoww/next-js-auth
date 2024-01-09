@@ -3,8 +3,13 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("POSTGRES_DB_URL")
+}
+
+enum user_role {
+  ADMIN
+  USER
 }
 
 model user {
@@ -14,7 +19,7 @@ model user {
   email_verified_at       DateTime?
   user_image_url          String?
   user_password           String?
-  user_role               String                   @default("user")
+  user_role               user_role                @default(USER)
   is_two_factor_enabled   Boolean                  @default(false)
   user_accounts           account[]
   two_factor_confirmation two_factor_confirmation?

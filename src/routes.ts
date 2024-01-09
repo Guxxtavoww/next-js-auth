@@ -1,12 +1,12 @@
 /**
- * An array of routes that are accessible to the public
- * These routes do not require authentication
+ * Uma matriz de rotas acessíveis ao público
+ * Essas rotas não exigem autenticação
  */
 export const publicRoutes = ['/', '/auth/new-verification'] as const;
 
 /**
- * An array of routes that are used for authentication
- * These routes will redirect logged in users to /settings
+ * Uma matriz de rotas usadas para autenticação
+ * Essas rotas redirecionarão usuários autenticados para /settings
  */
 export const authRoutes = [
   '/auth/login',
@@ -17,12 +17,12 @@ export const authRoutes = [
 ] as const;
 
 /**
- * The prefix for API authentication routes
- * Routes that start with this prefix are used for API authentication purposes
+ * O prefixo para rotas de autenticação da API
+ * Rotas que começam com esse prefixo são usadas para fins de autenticação da API
  */
 export const apiAuthPrefix = '/api/auth';
 
 /**
- * The default redirect path after logging in
+ * O caminho de redirecionamento padrão após o login
  */
 export const DEFAULT_LOGIN_REDIRECT = '/settings';
