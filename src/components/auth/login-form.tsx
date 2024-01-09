@@ -42,10 +42,6 @@ export function LoginForm() {
 
   const form = useForm<LoginType>({
     resolver: zodResolver(loginSchema),
-    defaultValues: {
-      user_email: '',
-      user_password: '',
-    },
   });
 
   const onSubmit = useCallback((data: LoginType) => {}, []);
@@ -53,7 +49,7 @@ export function LoginForm() {
   return (
     <CardWrapper
       headerLabel="Bem vindo de volta"
-      backButtonLabel="Já tem uma conta ?"
+      backButtonLabel="Não é cadastrado? Clique aqui"
       backButtonHref="/auth/register"
       showSocial
     >
@@ -86,7 +82,7 @@ export function LoginForm() {
                   name="user_email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>E-mail</FormLabel>
                       <FormControl>
                         <Input
                           {...field}
