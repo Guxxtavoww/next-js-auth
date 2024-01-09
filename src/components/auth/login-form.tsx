@@ -66,12 +66,12 @@ export function LoginForm() {
                 name="code"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Two Factor Code</FormLabel>
+                    <FormLabel>Verificação de duas Etapas</FormLabel>
                     <FormControl>
                       <Input
                         {...field}
                         disabled={isPending}
-                        placeholder="123456"
+                        placeholder="Insira o código de verificação"
                       />
                     </FormControl>
                     <FormMessage />
