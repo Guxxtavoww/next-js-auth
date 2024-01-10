@@ -1,7 +1,7 @@
 import { CheckCircledIcon } from '@radix-ui/react-icons';
 
 interface iFormSuccessProps {
-  message?: string;
+  message?: Maybe<string>;
 }
 
 export function FormSuccess({ message }: iFormSuccessProps) {
